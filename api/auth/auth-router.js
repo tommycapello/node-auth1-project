@@ -25,7 +25,7 @@ const {checkUsernameFree, checkUsernameExists, checkPasswordLength } = require('
   }
  */
 
-  router.post('/register', (req, res, next) => {
+  router.post('/register', checkUsernameFree, checkPasswordLength, (req, res, next) => {
 
   })
 
@@ -45,7 +45,7 @@ const {checkUsernameFree, checkUsernameExists, checkPasswordLength } = require('
     "message": "Invalid credentials"
   }
  */
-  router.post('/login', (req, res, next) => {
+  router.post('/login', checkUsernameExists, (req, res, next) => {
 
   })
 

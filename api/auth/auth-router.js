@@ -1,8 +1,6 @@
-// Require `checkUsernameFree`, `checkUsernameExists` and `checkPasswordLength`
-// middleware functions from `auth-middleware.js`. You will need them here!
-
 const express = require('express')
 const router = express.Router()
+const {checkUsernameFree, checkUsernameExists, checkPasswordLength } = require('./auth-middleware')
 
 /**
   1 [POST] /api/auth/register { "username": "sue", "password": "1234" }
@@ -27,7 +25,9 @@ const router = express.Router()
   }
  */
 
+  router.post('/register', (req, res, next) => {
 
+  })
 
 
 /**
@@ -45,7 +45,9 @@ const router = express.Router()
     "message": "Invalid credentials"
   }
  */
+  router.post('/login', (req, res, next) => {
 
+  })
 
 /**
   3 [GET] /api/auth/logout
@@ -62,8 +64,8 @@ const router = express.Router()
     "message": "no session"
   }
  */
-router.get('/', (req,res,next) => {
-  
+router.get('/logout', (req,res,next) => {
+
 })
 
 
